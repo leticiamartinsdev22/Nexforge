@@ -1,0 +1,17 @@
+[Unit]
+Description=Agente de monitoria do VPS (API de métricas)
+After=network.target docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/vps-agent
+ExecStart=/usr/bin/node /opt/vps-agent/server.js
+Restart=on-failure
+RestartSec=5
+Environment=AGENT_PORT=4100
+Environment=AGENT_TOKEN=troque-este-token-por-um-seguro
+# Usuário com permissão de leitura do docker.sock (geralmente precisa estar no grupo "docker")
+User=root
+
+[Install]
+WantedBy=multi-user.target

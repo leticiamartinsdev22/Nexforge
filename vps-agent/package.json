@@ -1,0 +1,14 @@
+{
+  "name": "vps-agent",
+  "version": "1.0.0",
+  "description": "Agente de coleta de métricas para painel de monitoria do VPS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "systeminformation": "^5.22.11",
+    "dockerode": "^4.0.2"
+  }
+}
