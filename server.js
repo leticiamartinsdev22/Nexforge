@@ -21,6 +21,11 @@ app.use((req, res, next) => {
   }
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ message: 'Nexforge API', version: '1.0.0' });
+});
+
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Nexforge API is running' });
